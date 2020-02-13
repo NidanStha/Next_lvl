@@ -4,11 +4,12 @@ body{
 }
 a{
   text-decoration: none;
-  color: #999;
+  color: #fff;
 }
 
 /* side nav bar*/
 .main-title{
+  cursor: pointer;
   margin: 0px;
   padding: 2px 5px;
   text-shadow: 5px 5px 5px #565667;
@@ -55,8 +56,85 @@ a{
   color: #fff;
   padding: 5px;
 }
-
 .field-heading{
   color: #fff;
-  border-bottom: 2px solid red;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #cacacacf;
+}
+
+/* employee table */
+.status-table{
+  font-size: 1.2em;
+  width: 650px;
+  border-radius: 4px;
+  border: 1px solid #cacacacf;
+  color: #fff;
+  text-align: center;
+  margin: 0px auto;
+}
+.status-table th{
+  background-color: #6963b1;
+}
+.status-table tr:nth-child(even){
+  background-color: #622bb5e0;
+}
+.status-table tr:nth-child(odd){
+  background-color: #7569e2;
+}
+
+.popup{
+  position: absolute;
+  z-index: 9;
+  top: 70px;
+  right: 7px;
+  background-color: red;
+  padding: 15px 20px;
+  border-radius: 5px;
+  animation: error 2s;
+  opacity: 0%;
+}
+@keyframes error {
+  0%{opacity: 100%;}
+  50%{opacity: 100%;}
+  100%{opacity: 0%;}
+}
+
+/*insert form*/
+.emp-ins{
+  margin: 0px auto;
+  text-align: center;
+  width: 900px;
+}
+.inp-fields{
+  margin-bottom: 5px;
+}
+.emp-ins-inp{
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2em;
+  padding: 5px;
+  outline: none;
+  margin: 0px auto;
+}
+.emp-ins-inp:hover,.emp-ins-inp:focus{
+  box-shadow: 0px 0px 7px 2px #999;
+}
+.emp-ins-btn{
+  border: none;
+  border-radius: 3px;
+  width: 250px;
+  padding: 8px 15px;
+  transition: .6s;
+  font-weight: bold;
+}
+.emp-ins-btn:hover{
+  box-shadow: 0px 0px 7px 2px #999;
+}
+.emp-ins-btn:active{
+  transform: scale(0.9);
+}
+.emp-radio{
+  outline: none;
+  width: 15px;
+  height: 15px;
 }
