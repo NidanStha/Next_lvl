@@ -5,7 +5,7 @@
   <ul class="nav-opr">
     <li><a href="index.php">Employee Status</a></li>
     <li><a href="insert.php">Add Employee</a></li>
-    <li><a href="update.php">Update Employee</a></li>
-    <li><a href="delete.php">Delete Employee</a></li>
+    <li><a href="updateser.php">Update Employee</a></li>
+    <li><a href="deleteser.php">Delete Employee</a></li>
   </ul>
 </nav>

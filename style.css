@@ -65,7 +65,7 @@ a{
 /* employee table */
 .status-table{
   font-size: 1.2em;
-  width: 650px;
+  width: 750px;
   border-radius: 4px;
   border: 1px solid #cacacacf;
   color: #fff;
@@ -81,22 +81,42 @@ a{
 .status-table tr:nth-child(odd){
   background-color: #7569e2;
 }
-
+.popup-true{
+  color: #fff;
+  position: absolute;
+  z-index: 9;
+  top: 125px;
+  right: 7px;
+  background-color: #04d004;
+  padding: 15px 20px;
+  border-radius: 5px;
+  animation: error 4s;
+  opacity: 0%;
+}
 .popup{
+  color: #fff;
   position: absolute;
   z-index: 9;
   top: 70px;
   right: 7px;
-  background-color: red;
+  background-color: #d00000;
   padding: 15px 20px;
   border-radius: 5px;
-  animation: error 2s;
+  animation: error 4s;
   opacity: 0%;
 }
 @keyframes error {
   0%{opacity: 100%;}
   50%{opacity: 100%;}
   100%{opacity: 0%;}
+}
+.opr-btn{
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  top: 8px;
+  padding: 3px 10px;
 }
 
 /*insert form*/
@@ -127,14 +147,42 @@ a{
   transition: .6s;
   font-weight: bold;
 }
-.emp-ins-btn:hover{
+.opr-btn:hover,
+.emp-ins-btn:hover,
+.emp-del-btn:hover,
+.emp-ser-btn:hover{
   box-shadow: 0px 0px 7px 2px #999;
 }
-.emp-ins-btn:active{
+.opr-btn:active,
+.emp-ins-btn:active,
+.emp-del-btn:active,
+.emp-ser-btn:active{
   transform: scale(0.9);
 }
 .emp-radio{
   outline: none;
   width: 15px;
   height: 15px;
+}
+
+/*search form button*/
+.emp-ser-btn{
+  width: 251px;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 15px;
+  transition: .6s;
+  font-weight: bold;
+}
+
+/*delete form button*/
+.emp-del-btn{
+  color: #fff;
+  background-color: #d00000;
+  border: none;
+  border-radius: 3px;
+  width: 250px;
+  padding: 8px 15px;
+  transition: .6s;
+  font-weight: bold;
 }

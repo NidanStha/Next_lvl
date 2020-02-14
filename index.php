@@ -13,6 +13,7 @@
         <th>Address</th>
         <th>Gender</th>
         <th>Contact</th>
+        <th colspan="2">Operation</th>
       </tr>
       <?php
         $i=1;
@@ -23,16 +24,37 @@
         }else{
           while($row=$result->fetch_object()){
             echo "<tr>";
-            echo"<td>" . $i . "</td>";
-            echo"<td>" . $row->Name . "</td>";
-            echo"<td>" . $row->Address . "</td>";
-            echo"<td>" . $row->Gender . "</td>";
-            echo"<td>" . $row->Contact . "</td>";
+            echo "<td>" . $i . "</td>";
+            echo "<td>" . $row->Name . "</td>";
+            echo "<td>" . $row->Address . "</td>";
+            echo "<td>" . $row->Gender . "</td>";
+            echo "<td>" . $row->Contact . "</td>";
+            echo "<td><form action='index.php' method='get'>" .
+                    "<button class='opr-btn' name='oper_del' value='$row->SN'>Delete</button></form></td>" .
+                  "<td><form action='index.php' method='get'>" .
+                    "<button class='opr-btn' name='oper_ed' value='$row->SN'>Edit</button></form></td>";
             echo "</tr>";
             ++$i;
           }
         }
       ?>
+      <?php
+        if (isset($_GET['oper_del'])) {
+          $oper=$_GET['oper_del'];
+          $qry = "DELETE from tb_employee where SN='$oper'";
+          if($con->query($qry)){
+            echo "<div class='popup-true'>Deleted</div>";
+            sleep(1);
+            header("location:" . $_SERVER['PHP_SELF']);
+          }
+        }
+        if (isset($_GET['oper_ed'])) {
+          session_start();
+          $oper_ed=$_GET['oper_ed'];
+          $_SESSION["oper_ed"] = $oper_ed;
+          header("location:" . "update.php");
+        }
+       ?>
     </table>
   </session>
 </body>

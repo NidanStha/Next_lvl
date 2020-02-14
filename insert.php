@@ -30,13 +30,13 @@
       $address = $_GET['Address'];
       $gender = $_GET['Gender'];
       $number = $_GET['Number'];
-      if (!is_int($number)) {
-        if (strlen($number !== 10)) {
-          echo "<div class='popup'>Invalid number</div>";
-        }
+      if (strlen($number)!==10) {
+        echo "<div class='popup'>Invalid number</div>";
       }else {
         $query = "INSERT INTO tb_employee VALUES ('','$name','$address','$gender','$number')";
         $con->query($query);
+        sleep(1);
+        echo "<div class='popup-true'>Data Inserted</div>";
         header("location:" . $_SERVER['PHP_SELF']);
       }
     }
